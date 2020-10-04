@@ -7,42 +7,111 @@ import { ReactComponent as LogoBottom } from "../images/LogoBookmarkBottom.svg";
 import { ReactComponent as Twitter } from "../images/Twitter.svg";
 import { ReactComponent as Facebook } from "../images/Facebook.svg";
 
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
+
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
 
 import GlobalStyles from "../styles/GlobalStyles";
 
+import { ReactComponent as LogoBookmarkBottom } from "../images/LogoBookmarkBottom.svg";
+
+const useStyles = makeStyles((theme) => ({
+  bgcolor: {
+    backgroundColor: theme.palette.darkblue.main,
+    padding: theme.spacing(2, 4),
+  },
+  footerButton: {
+    paddingRight: "5%",
+    color: "white",
+    "&:hover": {
+      color: "hsl(0, 94%, 66%)",
+      backgroundColor: "transparent",
+    },
+  },
+  footerIcon: {
+    color: "white",
+    cursor: "pointer",
+
+    "&:hover": {
+      color: "hsl(0, 94%, 66%)",
+      backgroundColor: "transparent",
+    },
+  },
+  flexWrapper: {
+    display: "flex",
+
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+    },
+  },
+}));
+
 const BottomBar = () => {
-  const classes = GlobalStyles();
+  const classes = useStyles();
 
   return (
-    <Container maxWidth="xxl" className={classes.footerBar}>
-      <Box
-        display="flex"
-        justifyContent="space-evenly"
-        wrapFlex="wrap"
+    <Grid container spacing={4} className={classes.bgcolor}>
+      <Grid
+        item
+        xl={2}
+        lg={8}
+        md={3}
+        sm={4}
+        xs={12}
+        className={classes.flexWrapper}
       >
-        <Box display="flex" justifyContent="space-evenly" alignItems="center" >
-          <Box marginRight="5%">
-            <LogoBottom />
-          </Box>
-          <Box display="flex" marginLeft="5%">
-            <Button className={classes.navbutton}>Features</Button>
-            <Button className={classes.navbutton}>Pricing</Button>
-            <Button className={classes.navbutton}>Contact</Button>
-          </Box>
-        </Box>
-        <Box display="flex" alignItems="center" >
-          <Box marginRight="45%" className={classes.icons} >
-          <a href="https://twitter.com/" className={classes.icons}><FacebookIcon /></a>
-  
-          </Box>
-          <Box display="flex" alignItems="center">
-            <a href="https://twitter.com/" className={classes.icons}><TwitterIcon /></a>
-          </Box>
-        </Box>
-      </Box>
-    </Container>
+        <LogoBookmarkBottom />
+      </Grid>
+      <Grid
+        item
+        xl={8}
+        lg={8}
+        md={6}
+        sm={4}
+        xs={12}
+        className={classes.flexWrapper}
+      >
+        <Button
+          className={classes.navbutton}
+          color="inherit"
+          className={classes.footerButton}
+        >
+          Features
+        </Button>
+        <Button
+          className={classes.navbutton}
+          color="inherit"
+          className={classes.footerButton}
+        >
+          Pricing
+        </Button>
+        <Button
+          className={classes.navbutton}
+          color="inherit"
+          className={classes.footerButton}
+        >
+          Contact
+        </Button>
+      </Grid>
+      <Grid
+        item
+        xl={2}
+        lg={8}
+        md={3}
+        sm={4}
+        xs={12}
+        className={classes.flexWrapper}
+      >
+        <a className={classes.footerIcon}>
+          <TwitterIcon color="inherit" />
+        </a>
+        <a className={classes.footerIcon}>
+          <FacebookIcon color="inherit" />
+        </a>
+      </Grid>
+    </Grid>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./App.css";
 
 import Header from "./components/Header";
@@ -8,6 +8,7 @@ import Extensions from "./components/Extensions";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import BottomBar from "./components/BottomBar"
+import Modal from "./components/Modal"
 
 
 import { createMuiTheme } from "@material-ui/core/styles";
@@ -35,11 +36,9 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-      // Purple and green play nicely together.
       main: 'hsl(231, 69%, 60%)',
     },
     secondary: {
-      // This is green.A700 as hex.
       main: 'hsl(0, 94%, 66%)',
     },
     maingray: {
@@ -55,8 +54,19 @@ const theme = createMuiTheme({
 })
 
 function App() {
+  const [modalOpened, setModalOpened] = useState(false)
+
+  useEffect(()=> {
+    const timeout = setTimeout(() => {
+      setModalOpened(true)
+    }, 300);
+
+    return () => clearTimeout(timeout)
+  },[])
+
+  const handleCloseModal = () => setModalOpened(false)
+
   return (
-    <>
       <ThemeProvider theme={theme}>
         <Header />
         <LandingPage />
@@ -65,8 +75,8 @@ function App() {
         <FAQ />
         <Footer />
         <BottomBar/>
+        <Modal open={modalOpened} onClose={handleCloseModal}/>
       </ThemeProvider>
-    </>
   );
 }
 

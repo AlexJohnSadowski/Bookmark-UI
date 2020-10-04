@@ -10,6 +10,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Box from "@material-ui/core/Box";
 import { ReactComponent as Logo } from "../images/LogoBookmark.svg";
 
+import Burger from '../components/Burger'
+
 const HeaderStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -85,15 +87,7 @@ export default function ButtonAppBar() {
           </Box>
 
           <Box display={{ xs: "flex", sm: "flex", md: "none" }}>
-            <IconButton
-              edge="end"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-              display={{ xs: "none", sm: "block", md: "none" }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <Burger />
           </Box>
         </Toolbar>
       </AppBar>

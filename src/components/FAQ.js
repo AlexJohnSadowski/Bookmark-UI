@@ -1,6 +1,5 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
-import Tab from "./Tab";
 import { Container } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import GlobalStyles from '../styles/GlobalStyles'

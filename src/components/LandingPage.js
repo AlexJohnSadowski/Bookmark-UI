@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   lpTitle: {
     fontFamily: "Rubik",
-    fontSize:"6vh"
+    fontSize: "6vh",
   },
   lpChromeButton: {
     marginRight: "2%",
@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   lpText: {
-    fontFamily:'Rubik',
-    color:'gray',
-    fontSize:'2vh'
+    fontFamily: "Rubik",
+    color: "gray",
+    fontSize: "2vh",
   },
 }));
 
@@ -42,11 +42,20 @@ const LandingPage = () => {
   const classes = useStyles();
   return (
     <Container maxWidth="xl" className={classes.container}>
-      <Box display="flex" justifyContent="space-evenly" width="100%" flexWrap="wrap"> 
+      <Box
+        display="flex"
+        justifyContent="space-evenly"
+        width="100%"
+        flexWrap="wrap"
+      >
         <Box>
-          <h1 className={classes.lpTitle}>A Simple Bookmark<br/> Manager</h1>
-          <p className={classes.lpText} >
-            A clean and simple interface to organise your favourite websites.<br />
+          <h1 className={classes.lpTitle}>
+            A Simple Bookmark
+            <br /> Manager
+          </h1>
+          <p className={classes.lpText}>
+            A clean and simple interface to organise your favourite websites.
+            <br />
             Open a new browser tab and see you sites load instantly. Try it for
             free.
           </p>
@@ -66,9 +75,7 @@ const LandingPage = () => {
             Get it on Firefox
           </Button>
         </Box>
-        <Box >
-          <IllustrationHero />
-        </Box>
+        <IllustrationHero />
       </Box>
     </Container>
   );
