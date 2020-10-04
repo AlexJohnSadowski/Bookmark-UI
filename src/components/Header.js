@@ -12,54 +12,18 @@ import { ReactComponent as Logo } from "../images/LogoBookmark.svg";
 
 import Burger from '../components/Burger'
 
-const HeaderStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    primaryColor: "hsl(231, 69%, 60%)",
-    secondaryColor: "hsl(0, 94%, 66%)",
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  toolbar: {},
-  appbar: {
-    boxShadow: "none",
-    margin:"2% 0 0 4%"
-  },
-  navbutton: {
-    fontSize: "2vh",
-    paddingRight: "5%",
-    "&:hover": {
-      color: "hsl(0, 94%, 66%)",
-      backgroundColor: "transparent",
-    },
-  },
-  login: {
-    backgroundColor: "hsl(0, 94%, 66%)",
-    boxShadow: "none",
-    border: "2px solid hsl(0, 94%, 66%)",
 
-    "&:hover": {
-      color: "hsl(0, 94%, 66%)",
-      border: "2px solid hsl(0, 94%, 66%)",
-      backgroundColor: "transparent",
-    },
-  },
-}));
+import HeaderStyles from "../styles/HeaderStyles";
 
 export default function ButtonAppBar() {
   const classes = HeaderStyles();
-
   return (
     <div className={classes.root}>
       <AppBar color="transparent" position="static" className={classes.appbar}>
         <Toolbar className={classes.toolbar}>
-          <Typography variant="h6" className={classes.title}>
+          <div className={classes.title}>
             <Logo />
-          </Typography>
+          </div>
           <Box
             display="flex"
             display={{ xs: "none", sm: "none", md: "flex" }}

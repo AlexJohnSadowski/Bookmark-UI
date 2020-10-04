@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
@@ -11,29 +10,14 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 
-const useStyles = makeStyles({
-  list: {
-    width: "100vw",
-    height:"100vh",
-    dislay:"flex",
-    justifyContent: "center",
+import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 
-  },
-  fullList: {
-    dislay:"flex",
-    height:"100vh",
+import BurgerStyles from "../styles/BurgerStyles";
 
-    justifyContent: "center",
-  },
-  burger: {
-      display:"flex",
-      justifyContent: "right",
-
-  },
-});
 
 export default function TemporaryDrawer() {
-  const classes = useStyles();
+  const classes = BurgerStyles();
   const [state, setState] = React.useState({
     left: false,
   });
@@ -58,22 +42,19 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List display="flex">
-        <div className={classes.burger}>
-          <Button
-            onClick={toggleDrawer(anchor, false)}
-            className={classes.burger}
-          >
-            Close
-          </Button>
-        </div>
-        {["Features", "Pricing", "Contact", "Login"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
+        <List display="flex" className={classes.test}>
+            <Button
+              onClick={toggleDrawer(anchor, false)}
+              className={classes.burger}
+            >
+              <CloseIcon/>
+            </Button>
+          {["Features", "Pricing", "Contact", "Login"].map((text, index) => (
+            <ListItem button key={text}  >
+              <ListItemText primary={text}  />
+            </ListItem>
+          ))}
+        </List>
     </div>
   );
 
@@ -81,11 +62,12 @@ export default function TemporaryDrawer() {
     <div>
       {["Menu"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+          <Button onClick={toggleDrawer(anchor, true)}><MenuIcon /></Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
+            className={classes.drawer}
           >
             {list(anchor)}
           </Drawer>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 import Header from "./components/Header";
@@ -7,15 +7,14 @@ import Features from "./components/Features";
 import Extensions from "./components/Extensions";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
-import BottomBar from "./components/BottomBar"
-import Modal from "./components/Modal"
-
+import BottomBar from "./components/BottomBar";
+import Modal from "./components/Modal";
+import Container from "@material-ui/core/Container";
 
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
-const font =  "Rubik"
-
+const font = "Rubik";
 
 const theme = createMuiTheme({
   overrides: {
@@ -23,60 +22,62 @@ const theme = createMuiTheme({
       root: {
         "& h1": {
           color: "black",
-          fontFamily:font
+          fontFamily: font,
         },
         "& h2": {
-          color: "red"
+          fontFamily: font,
         },
-        body:{
-          margin:"0"
-        }
-      }
+        body: {
+          margin: "0",
+        },
+      },
     },
   },
   palette: {
     primary: {
-      main: 'hsl(231, 69%, 60%)',
+      main: "hsl(231, 69%, 60%)",
     },
     secondary: {
-      main: 'hsl(0, 94%, 66%)',
+      main: "hsl(0, 94%, 66%)",
     },
     maingray: {
-      main:"hsl(229, 8%, 60%)"
+      main: "hsl(229, 8%, 60%)",
     },
-    darkblue:{
-      main:"hsl(229, 31%, 21%)"
-    }
+    darkblue: {
+      main: "hsl(229, 31%, 21%)",
+    },
   },
   typography: {
     fontFamily: font,
   },
-})
+});
 
 function App() {
-  const [modalOpened, setModalOpened] = useState(false)
+  const [modalOpened, setModalOpened] = useState(false);
 
-  useEffect(()=> {
+  useEffect(() => {
     const timeout = setTimeout(() => {
-      setModalOpened(true)
-    }, 300);
+      setModalOpened(true);
+    }, 30000);
 
-    return () => clearTimeout(timeout)
-  },[])
+    return () => clearTimeout(timeout);
+  }, []);
 
-  const handleCloseModal = () => setModalOpened(false)
+  const handleCloseModal = () => setModalOpened(false);
 
   return (
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <Container maxWidth="xl">
         <Header />
         <LandingPage />
         <Features />
         <Extensions />
         <FAQ />
-        <Footer />
-        <BottomBar/>
-        <Modal open={modalOpened} onClose={handleCloseModal}/>
-      </ThemeProvider>
+      </Container>
+      <Footer />
+      <BottomBar />
+      <Modal open={modalOpened} onClose={handleCloseModal} />
+    </ThemeProvider>
   );
 }
 

@@ -16,7 +16,7 @@ const FAQ = () => {
         </p>
         <MyAccordion/>
         <Box marginTop="5%">
-        <Button size="small" color="primary" variant="contained" className={classes.univButton}>More info</Button>
+        <Button size="medium" color="primary" variant="contained" className={classes.univButton}>More info</Button>
         </Box>
       </Box>
       

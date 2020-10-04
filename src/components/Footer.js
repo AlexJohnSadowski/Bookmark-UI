@@ -5,15 +5,11 @@ import Container from "@material-ui/core/Container";
 
 import ContactForm from "./ContactForm";
 
-import { ReactComponent as Logo } from "../images/LogoBookmark.svg";
-import { ReactComponent as Twitter } from "../images/Twitter.svg";
-import { ReactComponent as Facebook } from "../images/Facebook.svg";
-
-import GlobalStyles from "../styles/GlobalStyles";
+import FooterStyles from "../styles/FooterStyles";
 
 
 const Footer = () => {
-  const classes = GlobalStyles();
+  const classes = FooterStyles();
   return (
     <Container maxWidth="xxl" className={classes.footerBg}>
       <Box display="flex" justifyContent="center"  width="100%" >

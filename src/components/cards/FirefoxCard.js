@@ -9,10 +9,10 @@ import Box from "@material-ui/core/Box";
 
 import { ReactComponent as LogoFirefox } from "../../images/LogoFirefox.svg";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 275,
-    margin:"5% 0 15% 0"
+    margin: "5% 0 15% 0",
   },
   bullet: {
     display: "inline-block",
@@ -25,10 +25,17 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
-  card:{
-    
-  }
-});
+  univButton: {
+    color: "white",
+    backgroundColor: theme.palette.primary.main,
+    border: `2px solid ${theme.palette.primary.main}`,
+
+    "&:hover": {
+      color: theme.palette.primary.main,
+      backgroundColor: "white",
+    },
+  },
+}));
 
 export default function SimpleCard() {
   const classes = useStyles();
@@ -36,22 +43,42 @@ export default function SimpleCard() {
 
   return (
     <Card className={classes.root}>
-      <Box display="flex" alignItems="center" justifyContent="center" flexDirection="column" paddingBottom="50px" textAlign="center">
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        flexDirection="column"
+        paddingBottom="50px"
+        textAlign="center"
+      >
         <CardContent>
           <LogoFirefox />
           <Typography variant="h5" component="h2">
-            Add to Chrome
+            Add to Firefox
           </Typography>
           <Typography className={classes.pos} color="textSecondary">
             Minimum version 61
           </Typography>
         </CardContent>
       </Box>
-      <Box display="flex" alignItems="end" justifyContent="center" borderTop="7px dotted lightgray">
+      <Box
+        display="flex"
+        alignItems="end"
+        justifyContent="center"
+        borderTop="7px dotted lightgray"
+      >
         <CardActions>
-          <Button size="medium" width="100%" variant="contained" color="primary" >Add & Install Extension</Button>
+          <Button
+            size="medium"
+            width="100%"
+            variant="contained"
+            color="primary"
+            className={classes.univButton}
+          >
+            Add & Install Extension
+          </Button>
         </CardActions>
-        </Box>
+      </Box>
     </Card>
   );
 }

@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import Box from "@material-ui/core/Box";
-import GlobalStyles from '../styles/GlobalStyles'
-
+import ContactStyles from "../styles/ContactStyles";
 
 const MyForm = () => {
-  const classes = GlobalStyles();
+  const classes = ContactStyles();
 
   const [email, setEmail] = useState("");
 
@@ -21,9 +20,14 @@ const MyForm = () => {
 
   return (
     <>
-      <Box display="flex" flexDirection="row" justifyContent="center" marginBottom="5%">
+      <Box
+        display="flex"
+        flexDirection="row"
+        justifyContent="center"
+        marginBottom="5%"
+      >
         <ValidatorForm
-        className={classes.label}
+          className={classes.label}
           onSubmit={() => handleSubmit()}
           onError={(errors) => console.log(errors)}
         >
