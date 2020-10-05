@@ -71,20 +71,6 @@ function SimpleExpansionPanel(props) {
           expandIcon={<ExpandMoreIcon />}
           classes={{ expanded: classes.expandedPanel }}
         >
-          <Typography className={classes.heading}>Is there a mobile app?</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel>
-        <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon />}
-          classes={{ expanded: classes.expandedPanel }}
-        >
           <Typography className={classes.heading}>What about other Chromium browsers?</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
