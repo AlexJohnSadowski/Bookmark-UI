@@ -29,7 +29,7 @@ function SimpleExpansionPanel(props) {
           expandIcon={<ExpandMoreIcon />}
           classes={{ expanded: classes.expandedPanel }}
         >
-          <Typography className={classes.heading}>Expansion Panel 1</Typography>
+          <Typography className={classes.heading}>What is Bookmark?</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
@@ -43,7 +43,7 @@ function SimpleExpansionPanel(props) {
           expandIcon={<ExpandMoreIcon />}
           classes={{ expanded: classes.expandedPanel }}
         >
-          <Typography className={classes.heading}>Expansion Panel 2</Typography>
+          <Typography className={classes.heading}>How can I request a new browser?</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
@@ -57,7 +57,35 @@ function SimpleExpansionPanel(props) {
           expandIcon={<ExpandMoreIcon />}
           classes={{ expanded: classes.expandedPanel }}
         >
-          <Typography className={classes.heading}>Expansion Panel 3</Typography>
+          <Typography className={classes.heading}>Is there a mobile app?</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+      <ExpansionPanel>
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          classes={{ expanded: classes.expandedPanel }}
+        >
+          <Typography className={classes.heading}>Is there a mobile app?</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+      <ExpansionPanel>
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          classes={{ expanded: classes.expandedPanel }}
+        >
+          <Typography className={classes.heading}>What about other Chromium browsers?</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
