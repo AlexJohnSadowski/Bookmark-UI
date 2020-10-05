@@ -37,7 +37,6 @@ const LandingPage = () => {
           </Button>
           <Button
             variant="contained"
-            color="graycolor"
             className={classes.lpFirefoxButton}
           >
             Get it on Firefox

@@ -10,7 +10,7 @@ const FAQ = () => {
   return (
     <Container maxWidth="md" className={classes.margin}>
       <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-        <h1 className={classes.title} textAlign="center">Frequently Asked Questions</h1>
+        <h1 className={classes.title}>Frequently Asked Questions</h1>
         <p className={classes.text}>
           Here are some of our FAQs. <br/> If you have any other questions you'd like to be answered, please feel free to email us.
         </p>

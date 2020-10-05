@@ -2,13 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+
 import Box from "@material-ui/core/Box";
 
 import MenuIcon from "@material-ui/icons/Menu";
@@ -50,7 +44,7 @@ export default function TemporaryDrawer() {
       <Button onClick={toggleDrawer(anchor, false)} className={classes.burger}>
     
         <Box display="flex" flexDirection="row" position="absolute" top="20px" right="60px"><LogoBookmarkBottom fontSize="large" /></Box>
-        <Box display="flex" flexDirection="row" position="absolute" top="20px" left="200px"><CloseIcon /></Box>
+        <Box display="flex" flexDirection="row" position="absolute" top="20px" left="175px"><CloseIcon /></Box>
 
       </Button>
       <div className={classes.burgerList}>
@@ -61,10 +55,10 @@ export default function TemporaryDrawer() {
         ))}
       </div>
       <Box display="flex" flexDirection="row" position="absolute" bottom="20px">
-        <a href="" className={classes.footerIcon}>
+        <a href="https://www.facebook.com" className={classes.footerIcon}>
           <FacebookIcon fontSize="large" />
         </a>
-        <a href="" className={classes.footerIcon}>
+        <a href="https://www.twitter.com" className={classes.footerIcon}>
           <TwitterIcon fontSize="large" />
         </a>
       </Box>

@@ -9,13 +9,15 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import BottomBar from "./components/BottomBar";
 import Modal from "./components/Modal";
+
 import Container from "@material-ui/core/Container";
 
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
-const font = "Rubik";
+import useMouseTopCenter from "./components/hooks/useMouseTopCenter";
 
+const font = "Rubik";
 const theme = createMuiTheme({
   overrides: {
     MuiTypography: {
@@ -43,7 +45,7 @@ const theme = createMuiTheme({
     third: {
       main: "white",
     },
-    
+
     maingray: {
       main: "hsl(229, 8%, 60%)",
     },
@@ -56,14 +58,11 @@ const theme = createMuiTheme({
   },
 });
 
+theme.props = {};
 
-theme.props = {
-
-}
-
-function App(event) {
+function App() {
   const [modalOpened, setModalOpened] = useState(false);
-  console.log(event)
+  const isCenterTop = useMouseTopCenter();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -72,6 +71,11 @@ function App(event) {
 
     return () => clearTimeout(timeout);
   }, []);
+
+  useEffect(() => {
+    if (isCenterTop) 
+      setModalOpened(true);
+  }, [isCenterTop]);
 
   const handleCloseModal = () => setModalOpened(false);
 

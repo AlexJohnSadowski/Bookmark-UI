@@ -9,6 +9,7 @@ const BurgerStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+
   },
   fullList: {
     height: "100vh",
@@ -17,11 +18,12 @@ const BurgerStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     width: "100%",
-    padding: theme.spacing(2),
+    padding: "16px 0 16px 0",
     fontSize: "1.5em ",
     fontFamily:"Rubik",
+    textTransform:"uppercase",
     borderBottom:"1px solid rgba(255, 255, 255, 0.2)",
-    cursor:"pointer"
+    cursor:"pointer",
 
   },
   burger: {
@@ -40,7 +42,8 @@ const BurgerStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     padding: theme.spacing(2),
-    marginTop:"10%"
+    marginTop:"10%",
+
   },
   drawer: {
     background: "none",
