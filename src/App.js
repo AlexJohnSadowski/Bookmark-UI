@@ -40,6 +40,10 @@ const theme = createMuiTheme({
     secondary: {
       main: "hsl(0, 94%, 66%)",
     },
+    third: {
+      main: "white",
+    },
+    
     maingray: {
       main: "hsl(229, 8%, 60%)",
     },
@@ -52,8 +56,14 @@ const theme = createMuiTheme({
   },
 });
 
-function App() {
+
+theme.props = {
+
+}
+
+function App(event) {
   const [modalOpened, setModalOpened] = useState(false);
+  console.log(event)
 
   useEffect(() => {
     const timeout = setTimeout(() => {

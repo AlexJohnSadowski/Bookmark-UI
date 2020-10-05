@@ -24,9 +24,11 @@ const BottombarStyles = makeStyles((theme) => ({
     },
     flexWrapper: {
       display: "flex",
-  
       [theme.breakpoints.down("sm")]: {
         justifyContent: "center",
+      },
+      "& svg": {
+        marginTop:'2%',
       },
     },
   }));

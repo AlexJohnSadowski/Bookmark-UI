@@ -1,7 +1,6 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
 import Tabs from "./tabs/Tabs";
-import { Container } from "@material-ui/core";
 import GlobalStyles from "../styles/GlobalStyles";
 
 const Features = () => {

@@ -9,12 +9,17 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import Box from "@material-ui/core/Box";
 
-import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
+import MenuIcon from "@material-ui/icons/Menu";
+import CloseIcon from "@material-ui/icons/Close";
+
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
 
 import BurgerStyles from "../styles/BurgerStyles";
 
+import { ReactComponent as LogoBookmarkBottom } from "../images/LogoBookmarkBottom.svg";
 
 export default function TemporaryDrawer() {
   const classes = BurgerStyles();
@@ -42,19 +47,27 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-        <List display="flex" className={classes.test}>
-            <Button
-              onClick={toggleDrawer(anchor, false)}
-              className={classes.burger}
-            >
-              <CloseIcon/>
-            </Button>
-          {["Features", "Pricing", "Contact", "Login"].map((text, index) => (
-            <ListItem button key={text}  >
-              <ListItemText primary={text}  />
-            </ListItem>
-          ))}
-        </List>
+      <Button onClick={toggleDrawer(anchor, false)} className={classes.burger}>
+    
+        <Box display="flex" flexDirection="row" position="absolute" top="20px" right="60px"><LogoBookmarkBottom fontSize="large" /></Box>
+        <Box display="flex" flexDirection="row" position="absolute" top="20px" left="200px"><CloseIcon /></Box>
+
+      </Button>
+      <div className={classes.burgerList}>
+        {["Features", "Pricing", "Contact", "Login"].map((text, index) => (
+          <div key={text} className={classes.itemList}>
+            <p>{text}</p>
+          </div>
+        ))}
+      </div>
+      <Box display="flex" flexDirection="row" position="absolute" bottom="20px">
+        <a href="" className={classes.footerIcon}>
+          <FacebookIcon fontSize="large" />
+        </a>
+        <a href="" className={classes.footerIcon}>
+          <TwitterIcon fontSize="large" />
+        </a>
+      </Box>
     </div>
   );
 
@@ -62,13 +75,18 @@ export default function TemporaryDrawer() {
     <div>
       {["Menu"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}><MenuIcon /></Button>
+          <Button onClick={toggleDrawer(anchor, true)}>
+            <MenuIcon />
+          </Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
-            className={classes.drawer}
+            SlideProps={{
+              className: classes.drawer,
+            }}
           >
+            <div className={classes.background} />
             {list(anchor)}
           </Drawer>
         </React.Fragment>
