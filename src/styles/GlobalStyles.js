@@ -9,6 +9,9 @@ const GlobalStyles = makeStyles((theme) => ({
   },
   margin: {
     marginBottom: "5%",
+    [theme.breakpoints.down('sm')]: {
+      marginBottom:"15%"
+    },
   },
   title: {
     fontFamily: "Rubik",

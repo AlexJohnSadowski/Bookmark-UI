@@ -24,7 +24,7 @@ const MyForm = () => {
         display="flex"
         flexDirection="row"
         justifyContent="center"
-        marginBottom="5%"
+        marginBottom="10%"
       >
         <ValidatorForm
           className={classes.label}
